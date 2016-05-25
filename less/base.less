@@ -1,6 +1,10 @@
-// @SMACSS HINT : BASE - Define what elements look like by default;
-// ex: normalize or reset files
-
+@import url("layout.less");
+@import url("theme.less");
+@import url("module.less");
+@import url("state.less");
+@import url("responsive.less");
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900|Oswald:400,300,700|Poiret+One|Raleway:400,300,200,500,600,700,800,900);
+@import url("font-awesome.min.css");
 // Config files and project variables
 
 // --------------------------------------
@@ -44,7 +48,7 @@
 
 // ---- Font color
 
-@alto               : #DDDDDD;          // Text color on body, FA and other content
+@alto               : #DDD;          // Text color on body, FA and other content
 @cod-gray           : #161616;          // Text color on h1, h2, p, ect
 @cod-gray-light     : #1C1C1C;          // Link color
 @zest               : #E0821D;          // Link hover color
@@ -72,7 +76,7 @@
 @danube                : #5399c8;
 @breaker-bay           : #69abab;
 @acapulco              : #84bd9c;
-@mine-shaft            : #333333;
+@mine-shaft            : #333;
 
 
 // ---- Padding, Margin & Border-Radius
@@ -96,95 +100,87 @@
 // """"***"""" Flex, inline, box-sizing
 
 .box-sizing(@box:border-box) {
-    -webkit-box-sizing: @box;
-    -moz-box-sizing: @box;
-    -ms-box-sizing: @box;
-    box-sizing: @box;
+  -webkit-box-sizing: @box;
+  -moz-box-sizing: @box;
+  -ms-box-sizing: @box;
+  box-sizing: @box;
 }
 
 .flex(@direction:row, @box:border-box) {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-flex-direction: @direction;
-    -moz-flex-direction: @direction;
-    flex-direction: @direction;
-    .box-sizing(@box);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: @direction;
+  -moz-flex-direction: @direction;
+  flex-direction: @direction;
+  .box-sizing(@box);
 }
 
 .inline-flex(@direction:row, @box-sizing:border-box) {
-    display: inline-flex;
-    display: -webkit-inline-flex;
-    -webkit-flex-direction: @direction;
-    -moz-flex-direction: @direction;
-    flex-direction: @direction;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-flex-direction: @direction;
-    -moz-flex-direction: @direction;
-    flex-direction: @direction;
-    .box-sizing(@box-sizing);
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  -webkit-flex-direction: @direction;
+  -moz-flex-direction: @direction;
+  flex-direction: @direction;
+  -webkit-flex-direction: @direction;
+  -moz-flex-direction: @direction;
+  flex-direction: @direction;
+  .box-sizing(@box-sizing);
 }
 
 .align-items(@alignItems:center) {
-    -webkit-align-items: @alignItems;
-    -moz-align-items: @alignItems;
-    align-items: @alignItems;
+  -webkit-align-items: @alignItems;
+  -moz-align-items: @alignItems;
+  align-items: @alignItems;
 }
 
 .align-content(@alignContent:center) {
-    -webkit-align-content: @alignContent;
-    -moz-align-content: @alignContent;
-    align-content: @alignContent;
+  -webkit-align-content: @alignContent;
+  -moz-align-content: @alignContent;
+  align-content: @alignContent;
 }
 
 .flex-direction(@direction:row) {
-    -webkit-flex-direction: @direction;
-    -moz-flex-direction: @direction;
-    flex-direction: @direction;
+  -webkit-flex-direction: @direction;
+  -moz-flex-direction: @direction;
+  flex-direction: @direction;
 }
 
 .align-self(@alignSelf:baseline) {
-    -webkit-align-self: @alignSelf;
-    -moz-align-self: @alignSelf;
-    align-self: @alignSelf;
+  -webkit-align-self: @alignSelf;
+  -moz-align-self: @alignSelf;
+  align-self: @alignSelf;
 }
 
 .flex-basis(@width:auto) {
-    -webkit-flex-basis: @width;
-    -moz-flex-basis: @width;
-    flex-basis: @width;
+  -webkit-flex-basis: @width;
+  -moz-flex-basis: @width;
+  flex-basis: @width;
 }
 
 .flex-grow(@number:1) {
-    -webkit-flex-grow: @number;
-    -moz-flex-grow: @number;
-    flex-grow: @number;
+  -webkit-flex-grow: @number;
+  -moz-flex-grow: @number;
+  flex-grow: @number;
 }
 
 .flex-wrap(@wrap:wrap) {
-    -webkit-flex-wrap: @wrap;
-    -moz-flex-wrap: @wrap;
-    flex-wrap: @wrap;
+  -webkit-flex-wrap: @wrap;
+  -moz-flex-wrap: @wrap;
+  flex-wrap: @wrap;
 }
 
 .justify-content(@justify:center) {
-    -webkit-justify-content: @justify;
-    -moz-justify-content: @justify;
-    justify-content: @justify;
+  -webkit-justify-content: @justify;
+  -moz-justify-content: @justify;
+  justify-content: @justify;
 }
 
 .inline-block(@align:top) {
-    display: inline-block;
-    vertical-align: @align;
+  display: inline-block;
+  vertical-align: @align;
 }
 
 // === Background
@@ -192,13 +188,13 @@
 // """***""" Backgorund image, repeat, size, ect
 
 .background-image {
-    background-image: url("../less/img/overlay.png"), url("../assets/img/lowpoly-bg.jpg");
-    background-repeat: repeat, no-repeat;
-    background-size: auto, auto;
-    -webkit-background-position: top left, center 0;
-    background-position: top left, center 0;
-    -ms-background-attachment: fixed, fixed;
-    background-attachment: fixed, fixed;
+  background-image: url("../less/img/overlay.png"), url("../assets/img/lowpoly-bg.jpg");
+  background-repeat: repeat, no-repeat;
+  background-size: auto, auto;
+  -webkit-background-position: top left, center 0;
+  background-position: top left, center 0;
+  -ms-background-attachment: fixed, fixed;
+  background-attachment: fixed, fixed;
 }
 
 //.background-image-mobile {
@@ -212,9 +208,9 @@
 //}
 
 .appearance {
-    -webkit-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
 }
 
 // === Special Effects
@@ -225,102 +221,102 @@
 //
 // *** Fill-100
 @keyframes fill-100 {
-    from { width: 0%; }
-    to { width: 100%; }
+  from { width: 0%; }
+  to { width: 100%; }
 }
 @-webkit-keyframes fill-100 {
-    from { width: 0%; }
-    to { width: 100%; }
+  from { width: 0%; }
+  to { width: 100%; }
 }
 
 // *** Fill-95
 @keyframes fill-95 {
-    from { width: 0%; }
-    to { width: 95%; }
+  from { width: 0%; }
+  to { width: 95%; }
 }
 @-webkit-keyframes fill-95 {
-    from { width: 0%; }
-    to { width: 95%; }
+  from { width: 0%; }
+  to { width: 95%; }
 }
 
 // *** Fill-90
 @keyframes fill-90 {
-    from { width: 0%; }
-    to { width: 90%; }
+  from { width: 0%; }
+  to { width: 90%; }
 }
 @-webkit-keyframes fill-90 {
-    from { width: 0%; }
-    to { width: 90%; }
+  from { width: 0%; }
+  to { width: 90%; }
 }
 
 // *** Fill-85
 @keyframes fill-85 {
-    from { width: 0%; }
-    to { width: 85%; }
+  from { width: 0%; }
+  to { width: 85%; }
 }
 @-webkit-keyframes fill-85 {
-    from { width: 0%; }
-    to { width: 85%; }
+  from { width: 0%; }
+  to { width: 85%; }
 }
 
 // *** Fill-80
 @keyframes fill-80 {
-    from { width: 0%; }
-    to { width: 80%; }
+  from { width: 0%; }
+  to { width: 80%; }
 }
 @-webkit-keyframes fill-80 {
-    from { width: 0%; }
-    to { width: 80%; }
+  from { width: 0%; }
+  to { width: 80%; }
 }
 
 // *** Fill-70
 @keyframes fill-70 {
-    from { width: 0%; }
-    to { width: 70%; }
+  from { width: 0%; }
+  to { width: 70%; }
 }
 @-webkit-keyframes fill-70 {
-    from { width: 0%; }
-    to { width: 70%; }
+  from { width: 0%; }
+  to { width: 70%; }
 }
 
 // *** Fill-60
 @keyframes fill-60 {
-    from { width: 0%; }
-    to { width: 60%; }
+  from { width: 0%; }
+  to { width: 60%; }
 }
 @-webkit-keyframes fill-60 {
-    from { width: 0%; }
-    to { width: 60%; }
+  from { width: 0%; }
+  to { width: 60%; }
 }
 
 // *** Fill-50
 @keyframes fill-50 {
-    from { width: 0%; }
-    to { width: 50%; }
+  from { width: 0%; }
+  to { width: 50%; }
 }
 @-webkit-keyframes fill-50 {
-    from { width: 0%; }
-    to { width: 50%; }
+  from { width: 0%; }
+  to { width: 50%; }
 }
 
 // *** Fill-40
 @keyframes fill-40 {
-    from { width: 0%; }
-    to { width: 40%; }
+  from { width: 0%; }
+  to { width: 40%; }
 }
 @-webkit-keyframes fill-40 {
-    from { width: 0%; }
-    to { width: 40%; }
+  from { width: 0%; }
+  to { width: 40%; }
 }
 
 // *** Fill-30
 @keyframes fill-30 {
-    from { width: 0%; }
-    to { width: 30%; }
+  from { width: 0%; }
+  to { width: 30%; }
 }
 @-webkit-keyframes fill-30 {
-    from { width: 0%; }
-    to { width: 30%; }
+  from { width: 0%; }
+  to { width: 30%; }
 }
 
 // ---- Keyframes Fade
@@ -328,82 +324,73 @@
 // *** fadein
 
 @keyframes fadein {
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 @-webkit-keyframes fadein {
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 // *** fadein
 @keyframes fadeout {
-    100% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
 @-webkit-keyframes fadeout {
-    100% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
 
 // --------------------------------------
-
 // === Specials Effects
 //
 // """***""" Transition
 
 .transition-border {
-    -o-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
-    -ms-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
-    transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
+  -o-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
+  -ms-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
+  transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
 }
 //
 //.transition-border2(border-color 0.35s ease-in-out;);
 //.transition-border2(color 0.35s ease-in-out;);
 
 .transition-none(@transition:none) {
-    -o-animation: @transition !important;
-    -ms-animation: @transition !important;
-    animation: @transition !important;
+  -o-animation: @transition !important;
+  -ms-animation: @transition !important;
+  animation: @transition !important;
 }
 
 // """***""" Animation
 
 .animation-none(@animation:none) {
-    -o-animation: @animation !important;
-    -ms-animation: @animation !important;
-    animation: @animation !important;
+  -o-animation: @animation !important;
+  -ms-animation: @animation !important;
+  animation: @animation !important;
 }
 
 // ---- Border bottom on link hover
 
 .border-bottom-color(@border-bottom:rgba(224, 130, 29, 0)) {
-    border-bottom-color: @border-bottom;
+  border-bottom-color: @border-bottom;
 }
 
 // ---- Text shadow
 
 .text-shadow(@shadow:0 0 0.5px rgba(255, 255, 255, 0.25)) {
-    -webkit-text-shadow: @shadow;
-    -ms-text-shadow: @shadow;
-    text-shadow: @shadow;
+  -webkit-text-shadow: @shadow;
+  -ms-text-shadow: @shadow;
+  text-shadow: @shadow;
 }
 
 .overflow(@over:hidden) {
-    -webkit-overflow: @over;
-    -moz-overflow: @over;
-    -ms-overflow: @over;
-    overflow: @over;
+  -webkit-overflow: @over;
+  -moz-overflow: @over;
+  -ms-overflow: @over;
+  overflow: @over;
 }
-
-@import url("layout.less");
-@import url("theme.less");
-@import url("module.less");
-@import url("state.less");
-@import url("responsive.less");
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900|Oswald:400,300,700|Poiret+One|Raleway:400,300,200,500,600,700,800,900);
-@import url("font-awesome.min.css");
