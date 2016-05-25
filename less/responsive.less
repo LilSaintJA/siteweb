@@ -1,0 +1,471 @@
+// Responsive Less CSS
+
+// --------------------------------------
+// === Media Queries
+
+// """***""" Wides
+
+@media (max-width:1680px) {
+    html { font-size: @font-base-size; }
+}
+
+// """***""" Normal
+
+@media (max-width:1080px) {
+    html { font-size: @font-base-size; }
+
+    .link-crea {
+        width: 200px;
+        height: 200px;
+        margin: 0 15px;
+    }
+    // --------------------------------------
+    // """***""" Nav Normal style
+    .main-nav {
+        height: 150px;
+        .flex-direction(@direction:column);
+
+        [class^=clear] { width: 100%; }
+
+        .clear-left {
+            .justify-content(@justify:center);
+
+            .logo-nav {
+                .flex(@direction:column, @box:border-box);
+            }
+        }
+
+        .clear-right { 
+            .flex();
+            .justify-content();
+            margin-top: 10px;
+            padding: 0;
+
+            .main-link {
+                line-height: 1.5rem !important;
+                padding: 0 1rem;
+            }
+        }
+    }
+    // --------------------------------------
+    // Mise en place d'une barre de navigation avec icônes
+    // --------------------------------------
+    //    #name {
+    //        text-indent: 100%;
+    //        overflow: hidden;
+    //    }
+    //
+    //    #job {
+    //        text-indent: -500%;
+    //        overflow: hidden;
+    //        z-index: -1000;
+    //    }
+    // --------------------------------------
+    // """***""" Container Normal style
+    .container-img {
+        .flex(@direction:row, @box:border-box);
+        .flex-wrap();
+        justify-content: center;
+        margin: 1rem 0 4rem 0;
+    }
+
+    container-img.contact {
+        .flex(@direction:column, @box:border-box);
+    }
+
+    .social-network {
+        .flex(@direction:row, @box:border-box) !important;
+        padding: 0 2rem !important;
+        
+        .link {
+            margin: 5px !important;
+        }
+    }
+
+    .row { bottom: -355px !important; }
+
+    #grid-header { top: 115px; }
+
+    #grid-header header { padding: 12rem 0.5rem 1.5rem 0.5rem; }
+    #grid-header footer {
+        position: relative;
+        top: 25px;
+    }
+    // --------------------------------------
+    // """***""" Image Normal style
+    .img-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .mockup {
+        width: 150px + 90px;
+        height: 150px + 90px;
+    }
+
+    //    .img-skills {
+    //        width: 40px + 10px;
+    //        height: 40px + 10px;
+    //    }
+
+    .img-crea {
+        width: 100%;
+        height: 100%;
+    }
+
+    // --------------------------------------
+    // """***""" Header Normal style
+    .header-title {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        line-height: 3.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .header-paragraphe {
+        p {
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-bottom: 140px;
+        }
+    }
+    // --------------------------------------
+    // """***""" Button & Separation Normal style
+    .button {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+    }
+
+    .separation {
+        width: 50%;
+        margin: 15px auto 30px auto;
+    }
+    // --------------------------------------
+    // """***""" Title div Normal style
+    .main-title { font-size: 2rem !important; }
+    .secondary-title { font-size: 1rem !important; }
+    .ter-title { font-size: 1.1rem !important; }
+    // --------------------------------------
+    // """***""" List div Normal style
+    .list {
+        width: 100%;
+        height: auto;
+        .flex(@direction:column, @box:border-box);
+        .align-items(@alignItems:center);
+
+        .item {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .infos { font-size: 0.9rem; }
+
+    .infosParagraphe { font-size: 1rem; }
+    // --------------------------------------
+    // """***""" Bar Progress Normal style
+    .level { height: 30px; }
+
+    .go .level.html5 span { height: 30px; }
+    .go .level.css3 span { height: 30px; }
+    .go .level.js span { height: 30px; }
+    .go .level.jq span { height: 30px; }
+    .go .level.wp span { height: 30px; }
+    .go .level.psp span { height: 30px; }
+    .go .level.ci span { height: 30px; }
+    .go .level.ps span { height: 30px; }
+    .go .level.ai span { height: 30px; }
+
+    .description { font-size: 0.9rem; }
+}
+
+// """***""" Narrow
+@media (max-width:860px) and (max-height:860px) {
+    html { font-size: @font-size-small; }
+
+    .link-crea {
+        width: 150px;
+        height: 150px;
+        margin: 0 15px;
+    }
+
+    // --------------------------------------
+    // """***""" Nav Mobile style
+
+    .main-link {
+        padding: 0 0.5rem !important;
+    }
+
+    .row { bottom: -275px !important; }
+
+    #grid-header header { padding: 7rem 0.5rem 1.5rem 0.5rem; }
+    #grid-header footer {
+        position: relative;
+        top: -25px;
+    }
+    // Div compétences
+    .block-title { padding: 0 1rem; }
+    // --------------------------------------
+    // """***""" Image Narrow style
+    //    .img-logo {
+    //        width: 30px;
+    //        height: 30px;
+    //    }
+    //
+    //    .mockup {
+    //        width: 150px + 90px;
+    //        height: 150px + 90px;
+    //    }
+    //
+    //    .img-skills {
+    //        width: 40px + 10px;
+    //        height: 40px + 10px;
+    //    }
+    //
+    //    .img-crea {
+    //        width: 100%;
+    //        height: 100%;
+    //    }
+
+    // --------------------------------------
+    // """***""" Header Narrow style
+
+    .header-title {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        line-height: 3.5rem;
+        padding-bottom: 1.5rem;
+
+    }
+
+    .header-paragraphe {
+        p {
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-bottom: 140px;
+        }
+    }
+    // --------------------------------------
+    // """***""" Button & Separation Narrow style
+    //    .button {
+    //        padding: 1rem 3rem;
+    //        font-size: 1.2rem;
+    //    }
+    //
+    //    .separation {
+    //        width: 50%;
+    //        margin: 15px auto 30px auto;
+    //    }
+    // --------------------------------------
+    // """***""" Title div Narrow style
+    .main-title { font-size: 2rem !important; }
+    .secondary-title { font-size: 1rem !important; }
+    .ter-title { font-size: 1.1rem !important; }
+    // --------------------------------------
+    // """***""" List div Narrow style
+    //    .list {
+    //        width: 100%;
+    //        height: auto;
+    //        .flex(@direction:column, @box:border-box);
+    //        .align-items(@alignItems:center);
+    //
+    //        .item {
+    //            width: 100%;
+    //            height: auto;
+    //        }
+    //    }
+    //
+    //    .infos {
+    //        font-size: 0.9rem;
+    //    }
+    //
+    //    .infosParagraphe {
+    //        font-size: 1rem;
+    //    }
+    // --------------------------------------
+    // """***""" Bar Progress Narrow style
+    //    .level {
+    //        height: 20px;
+    //    }
+    //
+    //    .go .level.html5 span { height: 20px; }
+    //    .go .level.css3 span { height: 20px; }
+    //    .go .level.js span { height: 20px; }
+    //    .go .level.jq span { height: 20px; }
+    //    .go .level.wp span { height: 20px; }
+    //    .go .level.psp span { height: 20px; }
+    //    .go .level.ci span { height: 20px; }
+    //    .go .level.ps span { height: 20px; }
+    //    .go .level.ai span { height: 20px; }
+    //
+    //    .description {
+    //        font-size: 0.7rem;
+    //    }
+}
+
+
+
+// """***""" Mobile
+
+@media (max-width:600px) {
+    html { font-size: @font-size-skinny; }
+
+    .link-crea {
+        width: 150px;
+        height: 150px;
+        margin: 5px 0;
+    }
+    // --------------------------------------
+    // """***""" Nav Mobile style
+    .main-nav {
+        height: 150px;
+        .flex-direction(@direction:column);
+
+        [class^=clear] { width: 100%; }
+
+        .clear-left {
+            .justify-content(@justify:center);
+
+            .logo-nav {
+                .flex(@direction:column, @box:border-box);
+            }
+        }
+
+        .clear-right { 
+            .flex();
+            .justify-content();
+            margin-top: 10px;
+            padding: 0;
+
+            .main-link {
+                line-height: 1.5rem !important;
+                padding: 0 1rem;
+            }
+        }
+    }
+
+    // --------------------------------------
+    // Mise en place d'une barre de navigation avec icônes
+    // --------------------------------------
+    //        .clear-right { display: none; }
+
+    //        .clear-right-mobile {
+    //            width: 80%;
+    //            .flex();
+    //            .justify-content(@justify:space-around);
+    //            .align-items();
+    //        }
+    //    #name {
+    //        text-indent: 100%;
+    //        overflow: hidden;
+    //    }
+    //
+    //    #job {
+    //        text-indent: -500%;
+    //        overflow: hidden;
+    //        z-index: -1000;
+    //    }
+    // --------------------------------------
+    // """***""" Container Mobile style
+    .container-img {
+        .flex(@direction:column, @box:border-box);
+        .align-items();
+        margin: 1rem 0 4rem 0;
+    }
+
+    .row { bottom: -70px !important; }
+
+    #grid-header { top: 115px; }
+
+    #grid-header header { padding: 2.5rem 0.5rem; }
+    #grid-header footer {
+        position: relative;
+        top: -100px;
+    }
+    // --------------------------------------
+    // """***""" Image Mobile style
+    .img-logo {
+        width: 30px;
+        height: 30px;
+    }
+    .mockup {
+        width: 150px;
+        height: 150px;
+    }
+    .img-skills {
+        width: 40px;
+        height: 40px;
+    }
+    .img-crea {
+        width: 100%;
+        height: 100%;
+    }
+
+    // --------------------------------------
+    // """***""" Header Mobile style
+
+    .header-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+        line-height: 2.5rem;
+
+    }
+    .header-paragraphe {
+        .main-paragraphe {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            padding-bottom: 20px;
+        }
+    }
+    // --------------------------------------
+    // """***""" Button & Separation Mobile style
+    .button {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+    }
+    .separation {
+        width: 50%;
+        margin: 15px auto 30px auto;
+    }
+    // --------------------------------------
+    // """***""" Title div Mobile style
+    .main-title { font-size: 2rem !important; }
+    .secondary-title { font-size: 1rem !important; }
+    .ter-title { font-size: 1.1rem !important; }
+    // --------------------------------------
+    // """***""" List div Mobile style
+    .list {
+        width: 100%;
+        height: auto;
+        .flex(@direction:column, @box:border-box);
+        .align-items(@alignItems:center);
+
+        .item {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .infos { font-size: 0.9rem; }
+
+    .infosParagraphe {
+        font-size: 1rem;
+        //        padding: 0 1rem;
+        text-align: justify;
+    }
+    // --------------------------------------
+    // """***""" Bar Progress Mobile style
+    .level { height: 20px; }
+
+    .go .level.html5 span { height: 20px; }
+    .go .level.css3 span { height: 20px; }
+    .go .level.js span { height: 20px; }
+    .go .level.jq span { height: 20px; }
+    .go .level.wp span { height: 20px; }
+    .go .level.psp span { height: 20px; }
+    .go .level.ci span { height: 20px; }
+    .go .level.ps span { height: 20px; }
+    .go .level.ai span { height: 20px; }
+
+    .description { font-size: 0.7rem; }
+}

@@ -1,0 +1,34 @@
+// @SMACSS HINT : LAYOUT - Define the major sections of the page
+// ex : header, footer, main and sidebar OR grid systems...;
+
+// ---- Div principale
+
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+    .background-image;
+}
+
+[class^=container] {
+    width: 100%;
+    height: auto;
+//    position: relative;
+}
+
+#infos, #competences, #portfolio, #contact {
+    width: @default-container-width;
+    max-width: @container-max-width;
+    height: @height-grid;
+    background-color: @bridal-heath;
+    font-family: @font-base;
+    color: @cod-gray;
+    font-size: @font-base-size;
+    .flex(@direction:column, @box:border-box);
+    margin: 0 auto;
+    position: relative;
+    .flex-wrap();
+}
+
+#competences, #portfolio, #contact {
+    margin-top: 10.8rem;
+}

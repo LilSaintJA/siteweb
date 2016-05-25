@@ -1,0 +1,437 @@
+// @SMACSS HINT : MODULE - Modules are the actual content that fit within the layout containers
+// ex : a form button ;
+// @SMACSS HINT : SUBMODULE - variation of a button
+// ex : a declinaison of this very same form button ;
+
+// Config modules
+
+// --------------------------------------
+
+// """***""" Button modules
+
+.button {
+    .inline-flex(@direction:row, @box-sizing:border-box);
+    .transition-border;
+    position: relative;
+    border: 0;
+    background-color: @swirl;
+    color: #ffffff;
+    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    outline: 0;
+    padding: @padding-btn;
+    text-align: center;
+    border-radius: @border-radius;
+    font-weight: 400;
+}
+
+.button.style1 {
+    color: @cod-gray-light;
+    background-color: @swirl;
+    box-shadow: inset 0 0 0 1px #ffffff;
+
+    &:hover {
+        background: rgba(216, 210, 201, 0.15);
+        color: @zest !important;
+        text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25) !important;
+    }
+}
+
+// --------------------------------------
+
+// """***""" Nav Bar modules
+
+.main-nav {
+    width: @default-container-width;
+    height: @height-navigation;
+    background-color: rgba(255, 255, 255, 0.50);
+    position: fixed;
+    z-index: 999;
+    text-align: center;
+    .flex();
+
+    &:hover {
+        background-color: @white-light;
+        transition: all .9s ease-in-out;
+        //        transition: all .6s ease-out;
+    }
+
+    a {
+        padding: @padding-nav;
+    }
+
+    [class^=clear] {
+        width: 50vw;
+        .flex();
+        .flex-wrap(@wrap:wrap);
+    }
+
+    .clear-left {
+        .justify-content(@justify:flex-start);
+        color: @cod-gray;
+        padding: @padding-nav;
+
+        .logo-nav {
+            .flex(@direction:row, @box:border-box);
+            .align-items(@alignItems:center);
+            .align-content(@alignContent:center);
+
+            #name {
+                font-family: @title-font;
+                font-weight: 700;
+                font-size: @font-size-middle;
+                margin-right: 0.5rem;
+            }
+
+            #job {
+                font-family: @nav-font;
+                font-weight: 400;
+                font-size: @font-size-small;
+            }
+        }
+    }
+
+    .clear-right {
+        .justify-content(@justify:flex-end);
+        .align-items(@alignItems:center);
+        .align-content(@alignContent:center);
+        padding: @padding-nav;
+
+        a {
+            color: @cod-gray-light;
+            font-family: @nav-font;
+            font-weight: 400;
+            font-size: @font-size-small;
+            line-height: @line-height-nav;
+
+            &:hover {
+                color: @zest;
+            }
+        }
+    }
+
+    .clear-right-mobile {
+        display: none;
+    }
+}
+
+// --------------------------------------
+
+// """***""" Header modules
+
+#grid-header {
+    position: relative;
+    font-family: @title-font;
+    font-size: @font-size-middle;
+    color: @alto;
+    text-align: center;
+    letter-spacing: 3px;
+    margin: 0 auto;
+
+    header {
+        margin-bottom: 1em;
+        padding: @padding-header;
+        .box-sizing();
+    }
+}
+
+#grid-header footer {
+    width: 100%;
+    position: absolute;
+    //    bottom: 12rem;
+    margin: 0;
+
+    &::before {
+        content: '';
+        display: flex;
+        width: 90px;
+        height: 66px;
+        position: absolute;
+        left: 50%;
+        bottom: -4.5em;
+        margin-left: -45px;
+        margin-bottom: -33px;
+        background: url("img/arrow.svg") no-repeat;
+    }
+
+    &::after {
+        content: '';
+        display: flex;
+        position: absolute;
+        bottom: -9em;
+        left: 50%;
+        height: 9em;
+        border-left: solid 1px #fff;
+    }
+}
+
+// --------------------------------------
+
+// """***""" Qui suis-je modules
+
+.bold { font-weight: 600; }
+
+// --------------------------------------
+
+// """***""" Competences modules
+
+// --------------------------------------
+
+// ---- Bar Progress
+
+.level-competences {
+    width: @default-container-width;
+    height: auto;
+    .flex(@direction:column, @box:border-box);
+    .overflow();
+    margin-left: 1rem;
+    text-align: center;
+    //    padding: @padding-base;
+
+    .list {
+        display: table;
+        width: 100%;
+
+        .items {
+            display: table-cell;
+
+            &:first-child {
+                width: 10%;
+                max-width: 35px;
+            }
+
+            &:last-child {
+                width: 90%;
+                vertical-align: middle;
+            }
+        }
+
+        .items.bar {
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+    }
+}
+
+.level {
+    width: 80%;
+    height: 30px;
+    position: relative;
+    background-color: @base-bg-barProgress;
+    border-radius: 5px;
+}
+
+.description {
+    font-family: @font-base;
+    font-size: @font-size-skinny;
+    font-weight: 300;
+    text-align: left;
+}
+
+.go .level.html5 span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-85;
+    width: 100%;
+    height: 30px;
+    background-color: @bettersweet;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+.go .level.css3 span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-90;
+    width: 100%;
+    height: 30px;
+    background-color: @danube;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+.go .level.js span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-60;
+    width: 100%;
+    height: 30px;
+    background-color: @kournikova;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+.go .level.jq span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-30;
+    width: 100%;
+    height: 30px;
+    background-color: @san-juan;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+.go .level.wp span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-60;
+    width: 100%;
+    height: 30px;
+    background-color: @mine-shaft;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+.go .level.psp span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-60;
+    width: 100%;
+    height: 30px;
+    background-color: @acapulco;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+.go .level.ci span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-40;
+    width: 100%;
+    height: 30px;
+    background-color: @tan-hide;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+.go .level.ps span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-95;
+    width: 100%;
+    height: 30px;
+    background-color: @big-stone;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+.go .level.ai span {
+    animation-delay: 750ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-name: fill-80;
+    width: 100%;
+    height: 30px;
+    background-color: @orange-roughy;
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -290486px;
+    z-index: 100;
+}
+
+// --------------------------------------
+
+// """***""" Portfolio modules
+
+// --------------------------------------
+
+// """***""" Contact modules
+
+.contact {
+    .flex(@direction:column, @box:border-box);
+}
+
+.fa-user, .fa-mobile, .fa-envelope {
+    margin-right: 10px;
+}
+
+[class^=icon] {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    .flex();
+    .justify-content();
+    .align-items();
+}
+
+.icon-gp { background-color: #9b1a0d; }
+.icon-fb { background-color: #3c5b9b; }
+.icon-ig { background-color: #f4992c; }
+.icon-da { background-color: #48ae8b; }
+.icon-ld { background-color: #0173b2; }
+.icon-cp { background-color: #333333; }
+.icon-cc { background-color: #01836a; }
+
+.fa-google-plus, .fa-facebook, .fa-instagram, .fa-deviantart, .fa-linkedin, .fa-codepen, .fa-code {
+    color: white;
+}
