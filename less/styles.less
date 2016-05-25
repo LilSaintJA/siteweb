@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+// """***""" Config HTML & Body 
+html { font-size: 11px; }
+
+body {
+    font-family: @font-base;
+    line-height: @line-height-body;
+    color: @alto;
+    letter-spacing: 0.2px;
+    margin: 0;
+    .box-sizing(@box:border-box);
+}
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+    .background-image;
+}
+
+[class^=container] {
+    width: 100%;
+    height: auto;
+//    position: relative;
+}
+
+#infos, #competences, #portfolio, #contact {
+    width: @default-container-width;
+    max-width: @container-max-width;
+    height: @height-grid;
+    background-color: @bridal-heath;
+    font-family: @font-base;
+    color: @cod-gray;
+    font-size: @font-base-size;
+    .flex(@direction:column, @box:border-box);
+    margin: 0 auto;
+    position: relative;
+    .flex-wrap();
+}
+
+#competences, #portfolio, #contact {
+    margin-top: 10.8rem;
+}
