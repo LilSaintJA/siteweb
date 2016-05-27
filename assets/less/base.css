@@ -3,7 +3,7 @@
 .wrap {
   width: 100%;
   margin: 0 auto;
-  background-image: url("../less/img/overlay.png"), url("../assets/img/lowpoly-bg.jpg");
+  background-image: url("../less/img/overlay.png"), url("../img/lowpoly-bg.jpg");
   background-repeat: repeat, no-repeat;
   background-size: auto, auto;
   -webkit-background-position: top left, center 0;
@@ -1268,7 +1268,7 @@ a:hover {
   }
 }
 .background-image {
-  background-image: url("../less/img/overlay.png"), url("../assets/img/lowpoly-bg.jpg");
+  background-image: url("../less/img/overlay.png"), url("../img/lowpoly-bg.jpg");
   background-repeat: repeat, no-repeat;
   background-size: auto, auto;
   -webkit-background-position: top left, center 0;
