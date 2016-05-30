@@ -1,0 +1,142 @@
+/* ------------------- */
+/* *** BASE *** */
+/* ------------------- */
+/*
+*** Base rule define the default styling for how that element 
+*** should look in all occurrences on the page.
+*** See https://smacss.com/book/type-base
+*/
+// ------------------------
+/* Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// --------------------------
+/* 
+*** Main HTML, Body
+*/
+html {
+    font-size: 11px;
+}
+body {
+    font-family: @font-common;
+    line-height: @line-height-body;
+    //    color: @alto;
+    letter-spacing: 0.2px;
+    //    margin: 0;
+    .box-sizing(@box:border-box);
+}
+
+.body.is-scroll {
+    background-attachment: scroll, scroll;
+    background-size: auto, 100% auto;
+}
+
+body.is-loading * {
+    .transition-none(@transition:none);
+    .animation-none(@animation:none);
+}
+// --------------------------
+/* 
+*** Headings
+*/
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    font: @h1-size @font-heading;
+    //    font-size: @h1-size;
+    color: @alto;
+    //    text-align: center;
+    letter-spacing: 3px;
+}
+
+h2, h3 {
+    font: 800 @h2-size @font-common;
+    line-height: 1.2;
+    color: @cod-gray;
+    text-shadow: 0 0 .5px rgba(255, 255, 255, .25);
+}
+
+h3 {
+    font-weight: 400;
+}
+// --------------------------
+/* 
+*** Lists
+*/
+ul {
+    .flex();
+
+    > li {
+        .flex();
+        .align-items();        
+    }
+}
+// --------------------------
+/* 
+*** Links
+*/
+a {
+    font: 400 @font-size-small @font-monospace;
+    line-height: @line-height-nav;
+    color: @cod-gray-light;
+    
+    &:hover {
+        color: @zest;
+    }
+}
+// --------------------------
+/* 
+*** Emphase
+*/
+strong {
+    font-weight: 600;
+}
