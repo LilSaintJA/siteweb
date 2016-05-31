@@ -66,11 +66,12 @@ html {
 }
 body {
     font-family: @font-common;
-    line-height: @line-height-body;
+    //    line-height: @line-height-body;
     //    color: @alto;
-    letter-spacing: 0.2px;
+    letter-spacing: .2px;
     //    margin: 0;
     .box-sizing(@box:border-box);
+    .background-image;
 }
 
 .body.is-scroll {
@@ -91,14 +92,16 @@ h1, h2, h3 {
 }
 
 h1 {
-    font: @h1-size @font-heading;
+    font: 600 @h1-size @font-heading;
     //    font-size: @h1-size;
     color: @alto;
+    line-height: 6.5rem;
+    padding-bottom: 2rem;
     //    text-align: center;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
-h2, h3 {
+h2 {
     font: 800 @h2-size @font-common;
     line-height: 1.2;
     color: @cod-gray;
@@ -106,8 +109,19 @@ h2, h3 {
 }
 
 h3 {
-    font-weight: 400;
+    font: 400 @h3-size @font-common;
+    line-height: 1.2;
+    color: @cod-gray;
+    text-shadow: 0 0 .5px rgba(255, 255, 255, .25);
 }
+// --------------------------
+/* 
+*** Paragraphe
+*/
+//p {
+//    letter-spacing: 1px;
+//    font-size: @p-size;
+//}
 // --------------------------
 /* 
 *** Lists
@@ -128,7 +142,7 @@ a {
     font: 400 @font-size-small @font-monospace;
     line-height: @line-height-nav;
     color: @cod-gray-light;
-    
+
     &:hover {
         color: @zest;
     }
