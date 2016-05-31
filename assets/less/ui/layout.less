@@ -1,0 +1,59 @@
+/* ------------------- */
+/* *** LAYOUT *** */
+/* ------------------- */
+/*
+*** Layout is styling the major components of the page 
+*** ex : header, footer
+*** See https://smacss.com/book/type-layout
+*/
+// --------------------------
+/*
+*** Top level of the Website
+*/
+.wrap {
+    width: @default-container-width;
+    height: auto;
+}
+// --------------------------
+/*
+*** Main sections of the website
+*/
+#header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    font: @h2-size @font-heading;
+    color: @alto;
+    text-align: center;
+}
+
+#infos, 
+#competences, 
+#portfolio, 
+#contact {
+    position: relative;
+    .flex();
+    .justify-content();
+    width: @default-container-width;
+    height: auto;
+    background-color: @bridal-heath;
+    padding: @large-plus-value;
+    text-align: center;
+}
+
+.container {
+    width: @container-max-width;
+    height: inherit;
+}
+
+#footer {
+    z-index: 999;
+    .flex();
+    .justify-content();
+    max-width: @container-max-width;
+    width: @default-container-width;
+    margin: 0 auto;
+    color: @alto;
+    font-family: @font-common;
+    font-size: @font-size-middle;
+}
