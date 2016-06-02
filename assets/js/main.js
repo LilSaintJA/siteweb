@@ -74,7 +74,7 @@
         // Full screen header.
         if (settings.fullScreenHeader) {
 
-            var $header = $('.header'); // ****
+            var $header = $('#banner'); // ****
 
             if ($header.length > 0) {
 

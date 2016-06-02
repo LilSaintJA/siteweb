@@ -1,8 +1,55 @@
 /* --------------------------- */
-/* *** NavBar Modules *** */
+/* *** NavBar Module *** */
 /* --------------------------- */
 /*
 *** Module rule define the styling of discrete components of the page
 *** ex : navigation, carousels, form etc....
 *** https://smacss.com/book/type-module
 */
+
+/*
+*** Main nav -- typically in the header
+*/
+.main-nav {
+    position: fixed;
+    z-index: 999;
+    .flex();
+    width: @default-container-width;
+    height: @height-navigation;
+    background-color: rgba(255, 255, 255, .5);
+    color: @cod-gray;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.94);
+        transition: all 0.9s ease-in-out;
+    }
+    > .clear-left {
+        .justify-content(@justify:flex-start);
+        width: 50vw;
+        padding-right: @tiny-plus-value;
+        padding-left: @tiny-plus-value;
+
+        > .logo-nav {
+            padding-right: @tiny-plus-value;
+            padding-left: @tiny-plus-value;
+        }
+
+        > .name {
+            font: 700 2.2rem @font-heading;
+            margin-right: @tiny-plus-value;
+        }
+
+        > .job { font: 400 @p-size @font-monospace; }
+    }
+    > .clear-right {
+        .justify-content(@justify:flex-end);
+        width: 50vw;
+        padding-right: @small-plus-value;
+
+        .main-link {
+            font: 400 @p-size @font-monospace;
+            padding-right: @tiny-plus-value;
+            padding-left: @tiny-plus-value;
+        }
+    }
+}

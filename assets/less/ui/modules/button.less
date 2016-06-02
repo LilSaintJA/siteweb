@@ -1,0 +1,34 @@
+/* --------------------------- */
+/* *** Button Module *** */
+/* --------------------------- */
+/*
+*** Module rule define the styling of discrete components of the page
+*** ex : navigation, carousels, form etc....
+*** https://smacss.com/book/type-module
+*/
+
+/*
+*** Button
+*/
+.button {
+    position: relative;
+    .inline-flex();
+    .transition-border;
+    color: @cod-gray-light;
+    font: 400 @p-size @font-common;
+    text-shadow: 0 0 .5px rgba(255, 255, 255, .25);
+    text-align: center;
+    background-color: @swirl;
+    box-shadow: inset 0 0 0 1px @white;
+    border: 0;
+    border-radius: @medium-plus-value;
+    margin-top: @large-plus-value;
+    padding: @medium-value @extra-large-value;
+    outline: 0;
+    
+    &:hover {
+        background-color: rgba(216, 210, 201, .15);
+        color: @zest;
+        text-shadow: 0 0 .5px rgba(255, 255, 255, .25);
+    }
+}

@@ -18,13 +18,50 @@
 /*
 *** Main sections of the website
 */
-#header {
+#banner {
     position: relative;
+    .flex(@direction:column, @box:border-box);
+    .justify-content(@justify:center);
     width: 100%;
     height: auto;
-    font: @h2-size @font-heading;
+    font: @p-size @font-heading;
     color: @alto;
     text-align: center;
+    letter-spacing: 1px;
+
+    .main-paragraphe { margin-bottom: 70px; }
+
+    .footer {
+        position: absolute;
+        bottom: 170px;
+        .flex(@direction:column, @box:border-box);
+        .justify-content(@justify:center);
+        .align-items(@alignItems:center);
+        width: 100%;
+        //        margin: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -4.5em;
+            left: 50%;
+            .flex();
+            width: 90px;
+            height: 66px;
+            margin-bottom: -33px;
+            margin-left: -45px;
+            background: url("img/arrow.svg") no-repeat;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -9em;
+            left: 50%;
+            .flex();
+            height: 9em;
+            border-left: solid 1px @white;
+        }
+    }
 }
 
 #infos, 
@@ -32,18 +69,51 @@
 #portfolio, 
 #contact {
     position: relative;
-    .flex();
+    .flex(@direction:column, @box:border-box);
     .justify-content();
+    .align-items();
     width: @default-container-width;
-    height: auto;
+    //    height: auto;
     background-color: @bridal-heath;
     padding: @large-plus-value;
     text-align: center;
 }
 
+#infos, 
+#competences, 
+#portfolio {
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -8.5rem;
+        left: 50%;
+        .flex();
+        width: 90px;
+        height: 66px;
+        margin-bottom: -33px;
+        margin-left: -45px;
+        background: url("img/arrow.svg") no-repeat;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -16.5rem;
+        left: 50%;
+        .flex();
+        height: 16.5rem;
+        border-left: solid 1px #fff;
+    }
+}
+
+#competences,
+#portfolio,
+#contact {
+    margin-top: 16rem;
+}
+
 .container {
     width: @container-max-width;
-    height: inherit;
+    margin-top: 5px;
 }
 
 #footer {
@@ -52,8 +122,8 @@
     .justify-content();
     max-width: @container-max-width;
     width: @default-container-width;
+    padding: @small-value 0;
     margin: 0 auto;
     color: @alto;
-    font-family: @font-common;
-    font-size: @font-size-middle;
+    font: @font-size-middle @font-common;
 }

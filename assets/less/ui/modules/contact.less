@@ -1,0 +1,50 @@
+/* --------------------------------- */
+/* *** Contact Module *** */
+/* --------------------------------- */
+/*
+*** Module rule define the styling of discrete components of the page
+*** ex : navigation, carousels, form etc....
+*** https://smacss.com/book/type-module
+*/
+.contact { 
+    .flex(@direction:column, @box:border-box); 
+    margin-top: 10px;
+}
+.social-network {
+    .flex();
+    .justify-content(@justify:space-around);
+    max-width: 1080px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.fa-user, .fa-mobile, .fa-envelope { margin-right: 10px; }
+
+[class^=icon] {
+    .flex();
+    .justify-content();
+    .align-items();
+    width: 50px;
+    height: 50px;
+    font-size: 2.2rem;
+    border-radius: 50%;
+}
+/* -------------------- */
+/* Icone Social Network */
+.icon-gp { background-color: @tabasco; }
+.icon-fb { background-color: @chambray; }
+.icon-ig { background-color: @buckthorn; }
+.icon-da { background-color: @ocean-green; }
+.icon-ld { background-color: @deep-curelean; }
+.icon-cp { background-color: @mine-shaft; }
+.icon-cc { background-color: @deep-sea; }
+
+.fa-google-plus, 
+.fa-github-alt, 
+.fa-instagram, 
+.fa-deviantart, 
+.fa-linkedin, 
+.fa-codepen, 
+.fa-code {
+    color: @white;
+}
